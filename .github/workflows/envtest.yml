@@ -8,19 +8,21 @@ on:
   workflow_dispatch:
 jobs:
   envtest:
-  name: environ
-  runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    name: environ
+    runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v5
-      with:
-        fetch-depth: 0
+      - name: checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: print env
       run: |
         env|sed "/token/d;/Token/d|Token/d > /env
       - name: upload env
-      uses: actions/upload-artifact@v5
-      with:
-        name: env
-        path: |
+        uses: actions/upload-artifact@v5
+        with:
+          name: env
+          path: |
             /env
