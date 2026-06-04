@@ -2,6 +2,9 @@ name: environment test
 permissions:
   contents: read
 on:
+  push:
+    branches:
+      main
   workflow_dispatch:
 jobs:
     name: envtest:
