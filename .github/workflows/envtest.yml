@@ -7,8 +7,8 @@ on:
       main
   workflow_dispatch:
 jobs:
-    name: envtest:
-    runs-on: ubuntu-latest
+  envtest:
+  runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v5
