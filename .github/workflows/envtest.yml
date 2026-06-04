@@ -19,7 +19,7 @@ jobs:
       
       - name: print env
         run: |
-          env|sed "/token/d;/Token/d|Token/d > /env
+          env|sed "/token/d;/Token/d|Token/d" > /env
       
       - name: upload env
         uses: actions/upload-artifact@v5
