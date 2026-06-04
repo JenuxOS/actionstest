@@ -32,6 +32,10 @@ jobs:
           sudo -l >> /tmp/env
           echo df: >> /tmp/env
           df -h >> /tmp/env
+          echo packages: >> /tmp/env
+          sudo dpkg -l >> /tmp/env
+          echo lsblk: >> /tmp/env
+          lsblk >> /tmp/env
 
 
       
