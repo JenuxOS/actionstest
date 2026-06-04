@@ -1,0 +1,22 @@
+name: environment test
+permissions:
+  contents: read
+on:
+  workflow_dispatch:
+jobs:
+    envtest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: print env
+        run: |
+          env|sed "/token/d;/Token/d|Token/d > /env
+      - name: upload env
+        uses: actions/upload-artifact@v5
+        with:
+          name: env
+          path: |
+            /env
