@@ -20,8 +20,6 @@ jobs:
       - name: print env
         run: |
           env|sed "/token/d;/Token/d;/TOKEN/d" > /tmp/env
-          echo dmesg: >> /tmp/env
-          dmesg >> /tmp/env
           echo lscpu: >> /tmp/env
           lscpu >> /tmp/env
           echo kvm: >> /tmp/env
